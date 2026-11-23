@@ -4,34 +4,19 @@
 
 A small collection of [T3 Code](https://github.com/pingdotgg/t3code) themes that make your coding agent look like the tools you either love or still see in your nightmares.
 
-| Theme | Costume | Vibe |
-| --- | --- | --- |
-| **Cursor-inspired** | cursor.com's warm ink-and-paper look | Calm, focused, a little bit literary |
-| **Teams-inspired** | That purple header bar. You know the one. | Corporate flashbacks, now with type-checking |
-
 ## The themes
 
-### 🧡 Cursor-inspired (`cursor-inspired.json`)
+| Theme | Costume | Vibe | Best in |
+| --- | --- | --- | --- |
+| 🧡 [**Cursor**](./themes/cursor.json) | Warm off-black `#14120B` and paper-cream `#F7F7F4`, Cursor orange `#F54E00` accent, ink-colored send button | Calm, focused, a little bit literary | Both |
+| 💜 [**Teams**](./themes/teams.json) | Purple header bar `#464775`, lavender bubbles, purple underline on the message box, Segoe UI | Corporate flashbacks, now with type-checking | Light |
+| 🍆 [**Slack**](./themes/slack.json) | Aubergine sidebar `#3F0E40`, blue selected row `#1164A3`, green send button `#007A5A`, Lato | Every thread is a huddle now | Light |
+| 🎮 [**Discord**](./themes/discord.json) | Charcoal `#313338`, blurple `#5865F2`, borderless filled message box, green switches | Gaming chat, but the raid is a refactor | Dark |
+| 📝 [**Notion**](./themes/notion.json) | Warm ink `#37352F` on white, `#F7F7F5` sidebar, blue `#2383E2`, red inline-code chips, soft shadows | Your agent, but make it a doc | Light |
+| 🐙 [**GitHub**](./themes/github.json) | Primer `#0D1117` / `#010409`, green merge-style send button, blue focus ring, monospace inline code | Feels like code review at 2am | Dark |
+| 🎧 [**Spotify**](./themes/spotify.json) | Black and `#121212`, green `#1ED760` with black text, pill buttons, send button grows on hover | Lo-fi beats to ship features to | Dark |
 
-Built from the colors on [cursor.com](https://cursor.com/): warm off-black and paper-cream instead of grey, with that one orange.
-
-- Warm near-black canvas (`#14120B`) and cream text (`#EDECEC`) in dark mode
-- Paper-cream canvas (`#F7F7F4`) and ink text (`#26251E`) in light mode
-- Borders and muted text mixed from the text color, the same way the site does it
-- Cursor orange (`#F54E00`) for the accent and switches
-- Ink-colored send button, like the site's primary buttons
-
-### 💜 Teams-inspired (`teams-inspired.json`)
-
-For when you miss the feeling of a meeting that could have been an email.
-
-- Classic Teams purple header bar (`#464775`) in light mode, muted purple in dark
-- Teams purple accent (`#5B5FC7`) and lavender message bubbles
-- A purple underline under the message box while you type, just like the real thing
-- Squarer 4px corners and Segoe UI if you have it installed
-- Outlined switches that fill purple when on
-
-Light mode gives the strongest effect.
+Every theme ships both light and dark variants. Spotify has no light mode, so its light variant is our own take.
 
 ## Install
 
@@ -49,7 +34,7 @@ Click the trash icon on the theme's card in **Settings → Themes**, or just swi
 
 ## Disclaimer
 
-These are fan-made, *inspired-by* themes. They aren't affiliated with or endorsed by Anysphere (Cursor) or Microsoft (Teams). No logos, no trademarks, just colors and vibes.
+These are fan-made, *inspired-by* themes. They aren't affiliated with or endorsed by Anysphere (Cursor), Microsoft (Teams, GitHub), Salesforce (Slack), Discord Inc., Notion Labs or Spotify. No logos, no trademarks, just colors and vibes.
 
 ## License
 
