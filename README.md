@@ -6,20 +6,20 @@ A small collection of [T3 Code](https://github.com/pingdotgg/t3code) themes that
 
 | Theme | Costume | Vibe |
 | --- | --- | --- |
-| **Cursor-inspired OLED** | Cursor's dark editor, taken to pure `#000000` | Calm, focused, battery-friendly |
+| **Cursor-inspired** | cursor.com's warm ink-and-paper look | Calm, focused, a little bit literary |
 | **Teams-inspired** | That purple header bar. You know the one. | Corporate flashbacks, now with type-checking |
 
 ## The themes
 
-### 🖤 Cursor-inspired OLED (`cursor-oled.json`)
+### 🧡 Cursor-inspired (`cursor-inspired.json`)
 
-Built from the colors in Cursor's own Cursor Dark and Cursor Light themes, then pushed to true black for OLED screens.
+Built from the colors on [cursor.com](https://cursor.com/): warm off-black and paper-cream instead of grey, with that one orange.
 
-- Pure black backgrounds everywhere, so those pixels just switch off
-- Soft hairline borders (`#171717`) instead of grey panels
-- Muted blue accent (`#81A1C1`) taken from Cursor Dark
-- High-contrast white send button and visible switches, so you always know when you can hit send
-- Matching light mode based on Cursor Light
+- Warm near-black canvas (`#14120B`) and cream text (`#EDECEC`) in dark mode
+- Paper-cream canvas (`#F7F7F4`) and ink text (`#26251E`) in light mode
+- Borders and muted text mixed from the text color, the same way the site does it
+- Cursor orange (`#F54E00`) for the accent and switches
+- Ink-colored send button, like the site's primary buttons
 
 ### 💜 Teams-inspired (`teams-inspired.json`)
 
@@ -36,20 +36,16 @@ Light mode gives the strongest effect.
 ## Install
 
 1. Download the `.json` file you want from [`themes/`](./themes).
-2. Put it in your T3 Code themes folder:
+2. In T3 Code, open **Settings → Themes** and click **Add theme**.
+3. Click **Choose files** and pick the `.json` file, or paste its contents into the box.
 
-   ```sh
-   mkdir -p ~/.t3/userdata/themes
-   cp themes/teams-inspired.json ~/.t3/userdata/themes/
-   ```
+That's it: the theme is selected, and its card gets the full set of buttons (duplicate, edit, export, remove) like any theme you made yourself.
 
-3. Reload T3 Code and pick it from **Settings → Themes**.
-
-Or just ask the agent inside T3 Code: *"apply the theme from this JSON"* and paste the file.
+> **Don't copy the file into `~/.t3/userdata/themes/`.** T3 Code treats themes in that folder (and themes the agent applies for you) as part of the environment. They only get a duplicate button, so you can't edit or remove them from Settings, only by deleting the file.
 
 ## Undo
 
-Choose **T3 Code** (the stock theme) in **Settings → Themes**.
+Click the trash icon on the theme's card in **Settings → Themes**, or just switch back to **T3 Code** (the stock theme).
 
 ## Disclaimer
 
