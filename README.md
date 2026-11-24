@@ -18,6 +18,66 @@ A small collection of [T3 Code](https://github.com/pingdotgg/t3code) themes that
 
 Every theme ships both light and dark variants. Spotify has no light mode, so its light variant is our own take.
 
+## Previews
+
+<table>
+  <tr>
+    <th>Light</th>
+    <th>Dark</th>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Cursor</b></td>
+  </tr>
+  <tr>
+    <td><img src="./previews/cursor-light.svg" alt="Cursor theme, light mode" width="420"></td>
+    <td><img src="./previews/cursor-dark.svg" alt="Cursor theme, dark mode" width="420"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Teams</b></td>
+  </tr>
+  <tr>
+    <td><img src="./previews/teams-light.svg" alt="Teams theme, light mode" width="420"></td>
+    <td><img src="./previews/teams-dark.svg" alt="Teams theme, dark mode" width="420"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Slack</b></td>
+  </tr>
+  <tr>
+    <td><img src="./previews/slack-light.svg" alt="Slack theme, light mode" width="420"></td>
+    <td><img src="./previews/slack-dark.svg" alt="Slack theme, dark mode" width="420"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Discord</b></td>
+  </tr>
+  <tr>
+    <td><img src="./previews/discord-light.svg" alt="Discord theme, light mode" width="420"></td>
+    <td><img src="./previews/discord-dark.svg" alt="Discord theme, dark mode" width="420"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Notion</b></td>
+  </tr>
+  <tr>
+    <td><img src="./previews/notion-light.svg" alt="Notion theme, light mode" width="420"></td>
+    <td><img src="./previews/notion-dark.svg" alt="Notion theme, dark mode" width="420"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>GitHub</b></td>
+  </tr>
+  <tr>
+    <td><img src="./previews/github-light.svg" alt="GitHub theme, light mode" width="420"></td>
+    <td><img src="./previews/github-dark.svg" alt="GitHub theme, dark mode" width="420"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Spotify</b></td>
+  </tr>
+  <tr>
+    <td><img src="./previews/spotify-light.svg" alt="Spotify theme, light mode" width="420"></td>
+    <td><img src="./previews/spotify-dark.svg" alt="Spotify theme, dark mode" width="420"></td>
+  </tr>
+</table>
+
+These are mock windows, not real screenshots. They use T3 Code's real layout and each theme's own colors, corner radii and fonts. To redraw them after you change a theme, run `python3 scripts/previews.py`.
+
 ## Install
 
 1. Download the `.json` file you want from [`themes/`](./themes).
