@@ -20,6 +20,7 @@ A small collection of [T3 Code](https://github.com/pingdotgg/t3code) themes that
 | ▲ [**Vercel**](./themes/vercel.json) | Black and white with `#0070F3` blue, monochrome send button and switches, Geist and Geist Mono | Ship it to prod, ask questions never | Dark |
 | 💬 [**WhatsApp**](./themes/whatsapp.json) | Beige chat wallpaper `#EFEAE2`, mint green bubbles `#D9FDD3`, teal `#00A884` send button; dark has `#005C4B` bubbles | Your agent texts back faster than your friends | Light |
 | ▶️ [**YouTube**](./themes/youtube.json) | `#0F0F0F` canvas, chip-grey `#272727` controls, red `#FF0033` accent, Subscribe-style send button, Roboto | Like, subscribe and hit the merge button | Dark |
+| ✳️ [**Claude Code**](./themes/claude-code.json) | Charcoal `#262624` with a darker `#1F1E1D` sidebar, ivory `#FAF9F5` light mode, terracotta `#D97757` accent, rounded-square `#C6613F` send button, serif replies | Your agent, cosplaying as… a coding agent | Both |
 
 Every theme ships both light and dark variants. Spotify has no light mode, so its light variant is our own take.
 
@@ -114,6 +115,13 @@ Every theme ships both light and dark variants. Spotify has no light mode, so it
     <td><img src="./previews/youtube-light.svg" alt="YouTube theme, light mode" width="420"></td>
     <td><img src="./previews/youtube-dark.svg" alt="YouTube theme, dark mode" width="420"></td>
   </tr>
+  <tr>
+    <td colspan="2"><b>Claude Code</b></td>
+  </tr>
+  <tr>
+    <td><img src="./previews/claude-code-light.svg" alt="Claude Code theme, light mode" width="420"></td>
+    <td><img src="./previews/claude-code-dark.svg" alt="Claude Code theme, dark mode" width="420"></td>
+  </tr>
 </table>
 
 These are mock windows, not real screenshots. They use T3 Code's real layout and each theme's own colors, corner radii and fonts. To redraw them after you change a theme, run `python3 scripts/previews.py`.
@@ -134,7 +142,7 @@ Click the trash icon on the theme's card in **Settings → Themes**, or just swi
 
 ## Disclaimer
 
-These are fan-made, *inspired-by* themes. They aren't affiliated with or endorsed by Anysphere (Cursor), Microsoft (Teams, GitHub), Salesforce (Slack), Discord Inc., Notion Labs, Spotify, X Corp., Linear Orbit, Vercel, Meta (WhatsApp) or Google (YouTube). No logos, no trademarks, just colors and vibes.
+These are fan-made, *inspired-by* themes. They aren't affiliated with or endorsed by Anysphere (Cursor), Microsoft (Teams, GitHub), Salesforce (Slack), Discord Inc., Notion Labs, Spotify, X Corp., Linear Orbit, Vercel, Meta (WhatsApp), Google (YouTube) or Anthropic (Claude Code). No logos, no trademarks, just colors and vibes.
 
 ## License
 

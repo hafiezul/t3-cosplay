@@ -25,6 +25,9 @@ MONO = "ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,monospace"
 # T3 Code's defaults: 8px rows and controls, 16px bubbles and message box.
 DEFAULT_SHAPE = {"row": 8, "bubble": 16, "composer": 16, "button": 8, "code": 8}
 SHAPE = {
+    "claude-code": {"row": 8, "bubble": 12, "composer": 20, "button": 8, "code": 8, "shadow": True,
+                    "send": 10, "switch": {"light": "#C6613F", "dark": "#C6613F"}, "knob": "#FFFFFF",
+                    "prose": "'Anthropic Serif','Tiempos Text',Charter,'Iowan Old Style',Georgia,serif"},
     "cursor": {"row": 6, "bubble": 8, "composer": 10, "button": 6, "code": 6,
                "switch": {"light": "#F54E00", "dark": "#F54E00"}, "knob": "#FFFFFF"},
     "teams": {"row": 4, "bubble": 6, "composer": 4, "button": 4, "code": 4, "underline": True,
@@ -102,8 +105,8 @@ class Svg:
     def line(self, x1, y1, x2, y2, stroke):
         self.add(f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{stroke}" stroke-width="1"/>')
 
-    def text(self, x, y, s, fill, size=13, weight=400, anchor="start", mono=False):
-        fam = f' font-family="{MONO}"' if mono else ""
+    def text(self, x, y, s, fill, size=13, weight=400, anchor="start", mono=False, family=None):
+        fam = f' font-family="{MONO if mono else family}"' if mono or family else ""
         self.add(
             f'<text x="{x}" y="{y}" fill="{fill}" font-size="{size}" font-weight="{weight}"'
             f' text-anchor="{anchor}"{fam} xml:space="preserve">{escape(s)}</text>'
@@ -211,7 +214,8 @@ def render(slug, theme, mode):
     svg.text(cx + 276, y, "−3", c["errorForeground"], 12.5, 600, mono=True)
 
     y += 34
-    svg.text(cx, y, "Done. Five new themes, each with a light and a dark variant:", fg, 14.5)
+    prose = sh.get("prose")
+    svg.text(cx, y, "Done. Five new themes, each with a light and a dark variant:", fg, 14.5, family=prose)
     inline_bg = mix(fg, c["canvas"], 0.08)
     inline_fg = sh.get("inline_code", {}).get(mode, fg)
     for name, rest in [("slack.json", " aubergine sidebar, green send button"),
@@ -222,7 +226,7 @@ def render(slug, theme, mode):
         w = len(name) * 7.8 + 10
         svg.rect(cx + 20, y - 15, w, 21, inline_bg, 4)
         svg.text(cx + 25, y, name, inline_fg, 12.5, mono=True)
-        svg.text(cx + 20 + w + 2, y, rest, fg, 14.5)
+        svg.text(cx + 20 + w + 2, y, rest, fg, 14.5, family=prose)
 
     y += 24
     svg.rect(cx, y, COL_W, 112, c["codeBackground"], sh["code"], c["border"])
@@ -264,7 +268,10 @@ def render(slug, theme, mode):
     svg.add(f'<circle cx="{sx + 25}" cy="{sy + 9}" r="7" fill="{knob}"/>')
     svg.text(sx + 42, sy + 13.5, "Plan", c["mutedForeground"], 12.5)
     sxc, syc = cx + COL_W - 30, by + 15
-    svg.add(f'<circle cx="{sxc}" cy="{syc}" r="16" fill="{c["messageAction"]}"/>')
+    if "send" in sh:
+        svg.rect(sxc - 16, syc - 16, 32, 32, c["messageAction"], sh["send"])
+    else:
+        svg.add(f'<circle cx="{sxc}" cy="{syc}" r="16" fill="{c["messageAction"]}"/>')
     svg.icon(sxc - 8, syc - 8, "up", c["messageActionForeground"], 16)
 
     svg.add("</g>")
