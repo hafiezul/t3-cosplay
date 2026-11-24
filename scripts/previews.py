@@ -10,7 +10,6 @@ Run from the repo root: python3 scripts/previews.py
 """
 import json
 import pathlib
-import re
 from html import escape
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -26,8 +25,7 @@ MONO = "ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,monospace"
 DEFAULT_SHAPE = {"row": 8, "bubble": 16, "composer": 16, "button": 8, "code": 8}
 SHAPE = {
     "claude-code": {"row": 8, "bubble": 12, "composer": 20, "button": 8, "code": 8, "shadow": True,
-                    "send": 10, "switch": {"light": "#C6613F", "dark": "#C6613F"}, "knob": "#FFFFFF",
-                    "prose": "'Anthropic Serif','Tiempos Text',Charter,'Iowan Old Style',Georgia,serif"},
+                    "send": 10, "switch": {"light": "#C6613F", "dark": "#C6613F"}, "knob": "#FFFFFF"},
     "cursor": {"row": 6, "bubble": 8, "composer": 10, "button": 6, "code": 6,
                "switch": {"light": "#F54E00", "dark": "#F54E00"}, "knob": "#FFFFFF"},
     "teams": {"row": 4, "bubble": 6, "composer": 4, "button": 4, "code": 4, "underline": True,
@@ -71,11 +69,6 @@ ICON = {
 }
 
 
-def font_of(css):
-    m = re.search(r"body\{font-family:([^;}]+)", css or "")
-    return m.group(1).replace('"', "'") if m else T3_FONT
-
-
 def hexrgb(h):
     h = h.lstrip("#")
     return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
@@ -105,8 +98,8 @@ class Svg:
     def line(self, x1, y1, x2, y2, stroke):
         self.add(f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{stroke}" stroke-width="1"/>')
 
-    def text(self, x, y, s, fill, size=13, weight=400, anchor="start", mono=False, family=None):
-        fam = f' font-family="{MONO if mono else family}"' if mono or family else ""
+    def text(self, x, y, s, fill, size=13, weight=400, anchor="start", mono=False):
+        fam = f' font-family="{MONO}"' if mono else ""
         self.add(
             f'<text x="{x}" y="{y}" fill="{fill}" font-size="{size}" font-weight="{weight}"'
             f' text-anchor="{anchor}"{fam} xml:space="preserve">{escape(s)}</text>'
@@ -126,7 +119,7 @@ def render(slug, theme, mode):
     svg = Svg()
     svg.add(
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}"'
-        f' font-family="{font_of(theme.get("css"))}">'
+        f' font-family="{T3_FONT}">'
     )
     svg.add(f'<title>{escape(theme["name"])} theme, {mode} mode (mock)</title>')
     svg.add(
@@ -214,8 +207,7 @@ def render(slug, theme, mode):
     svg.text(cx + 276, y, "−3", c["errorForeground"], 12.5, 600, mono=True)
 
     y += 34
-    prose = sh.get("prose")
-    svg.text(cx, y, "Done. Five new themes, each with a light and a dark variant:", fg, 14.5, family=prose)
+    svg.text(cx, y, "Done. Five new themes, each with a light and a dark variant:", fg, 14.5)
     inline_bg = mix(fg, c["canvas"], 0.08)
     inline_fg = sh.get("inline_code", {}).get(mode, fg)
     for name, rest in [("slack.json", " aubergine sidebar, green send button"),
@@ -226,7 +218,7 @@ def render(slug, theme, mode):
         w = len(name) * 7.8 + 10
         svg.rect(cx + 20, y - 15, w, 21, inline_bg, 4)
         svg.text(cx + 25, y, name, inline_fg, 12.5, mono=True)
-        svg.text(cx + 20 + w + 2, y, rest, fg, 14.5, family=prose)
+        svg.text(cx + 20 + w + 2, y, rest, fg, 14.5)
 
     y += 24
     svg.rect(cx, y, COL_W, 112, c["codeBackground"], sh["code"], c["border"])
