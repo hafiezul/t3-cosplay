@@ -39,6 +39,17 @@ SHAPE = {
     "github": {"row": 6, "bubble": 6, "composer": 12, "button": 6, "code": 6, "bubble_border": True},
     "spotify": {"row": 6, "bubble": 8, "composer": 24, "button": 999, "code": 8, "borderless": True,
                 "bold_buttons": True},
+    "x": {"row": 999, "bubble": 16, "composer": 16, "button": 999, "code": 12, "bold_buttons": True,
+          "switch": {"light": "#1D9BF0", "dark": "#1D9BF0"}, "knob": "#FFFFFF"},
+    "linear": {"row": 6, "bubble": 8, "composer": 10, "button": 6, "code": 6, "shadow": True,
+               "switch": {"light": "#5E6AD2", "dark": "#5E6AD2"}, "knob": "#FFFFFF"},
+    "vercel": {"row": 6, "bubble": 12, "composer": 12, "button": 6, "code": 6,
+               "switch": {"light": "#171717", "dark": "#EDEDED"},
+               "knob": {"light": "#FFFFFF", "dark": "#0A0A0A"}},
+    "whatsapp": {"row": 8, "bubble": 8, "composer": 24, "button": 999, "code": 6, "borderless": True,
+                 "shadow": True, "switch": {"light": "#00A884", "dark": "#00A884"}, "knob": "#FFFFFF"},
+    "youtube": {"row": 10, "bubble": 12, "composer": 24, "button": 999, "code": 12,
+                "switch": {"light": "#065FD4", "dark": "#3EA6FF"}, "knob": "#FFFFFF"},
 }
 
 # Lucide icon paths (ISC license), drawn on a 24px grid.
@@ -247,7 +258,10 @@ def render(slug, theme, mode):
         chip_x += w + 8
     sx, sy = chip_x + 8, by + 6
     svg.rect(sx, sy, 34, 18, sh.get("switch", {}).get(mode, c["accent"]), 9)
-    svg.add(f'<circle cx="{sx + 25}" cy="{sy + 9}" r="7" fill="{sh.get("knob", c["accentForeground"])}"/>')
+    knob = sh.get("knob", c["accentForeground"])
+    if isinstance(knob, dict):
+        knob = knob[mode]
+    svg.add(f'<circle cx="{sx + 25}" cy="{sy + 9}" r="7" fill="{knob}"/>')
     svg.text(sx + 42, sy + 13.5, "Plan", c["mutedForeground"], 12.5)
     sxc, syc = cx + COL_W - 30, by + 15
     svg.add(f'<circle cx="{sxc}" cy="{syc}" r="16" fill="{c["messageAction"]}"/>')

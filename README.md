@@ -15,6 +15,11 @@ A small collection of [T3 Code](https://github.com/pingdotgg/t3code) themes that
 | 📝 [**Notion**](./themes/notion.json) | Warm ink `#37352F` on white, `#F7F7F5` sidebar, blue `#2383E2`, red inline-code chips, soft shadows | Your agent, but make it a doc | Light |
 | 🐙 [**GitHub**](./themes/github.json) | Primer `#0D1117` / `#010409`, green merge-style send button, blue focus ring, monospace inline code | Feels like code review at 2am | Dark |
 | 🎧 [**Spotify**](./themes/spotify.json) | Black and `#121212`, green `#1ED760` with black text, pill buttons, send button grows on hover | Lo-fi beats to ship features to | Dark |
+| ✖️ [**X**](./themes/x.json) | Pure black "Lights out" `#000000`, blue `#1D9BF0`, white pill send button, rounded everything, Chirp if you have it | Doomscrolling, but it compiles | Dark |
+| 🟣 [**Linear**](./themes/linear.json) | Near-black `#0F1011` with a darker `#08090A` sidebar, indigo `#5E6AD2`, Inter, thin icons, quiet borders | Issue tracker energy, zero backlog guilt | Dark |
+| ▲ [**Vercel**](./themes/vercel.json) | Black and white with `#0070F3` blue, monochrome send button and switches, Geist and Geist Mono | Ship it to prod, ask questions never | Dark |
+| 💬 [**WhatsApp**](./themes/whatsapp.json) | Beige chat wallpaper `#EFEAE2`, mint green bubbles `#D9FDD3`, teal `#00A884` send button; dark has `#005C4B` bubbles | Your agent texts back faster than your friends | Light |
+| ▶️ [**YouTube**](./themes/youtube.json) | `#0F0F0F` canvas, chip-grey `#272727` controls, red `#FF0033` accent, Subscribe-style send button, Roboto | Like, subscribe and hit the merge button | Dark |
 
 Every theme ships both light and dark variants. Spotify has no light mode, so its light variant is our own take.
 
@@ -74,6 +79,41 @@ Every theme ships both light and dark variants. Spotify has no light mode, so it
     <td><img src="./previews/spotify-light.svg" alt="Spotify theme, light mode" width="420"></td>
     <td><img src="./previews/spotify-dark.svg" alt="Spotify theme, dark mode" width="420"></td>
   </tr>
+  <tr>
+    <td colspan="2"><b>X</b></td>
+  </tr>
+  <tr>
+    <td><img src="./previews/x-light.svg" alt="X theme, light mode" width="420"></td>
+    <td><img src="./previews/x-dark.svg" alt="X theme, dark mode" width="420"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Linear</b></td>
+  </tr>
+  <tr>
+    <td><img src="./previews/linear-light.svg" alt="Linear theme, light mode" width="420"></td>
+    <td><img src="./previews/linear-dark.svg" alt="Linear theme, dark mode" width="420"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Vercel</b></td>
+  </tr>
+  <tr>
+    <td><img src="./previews/vercel-light.svg" alt="Vercel theme, light mode" width="420"></td>
+    <td><img src="./previews/vercel-dark.svg" alt="Vercel theme, dark mode" width="420"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>WhatsApp</b></td>
+  </tr>
+  <tr>
+    <td><img src="./previews/whatsapp-light.svg" alt="WhatsApp theme, light mode" width="420"></td>
+    <td><img src="./previews/whatsapp-dark.svg" alt="WhatsApp theme, dark mode" width="420"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>YouTube</b></td>
+  </tr>
+  <tr>
+    <td><img src="./previews/youtube-light.svg" alt="YouTube theme, light mode" width="420"></td>
+    <td><img src="./previews/youtube-dark.svg" alt="YouTube theme, dark mode" width="420"></td>
+  </tr>
 </table>
 
 These are mock windows, not real screenshots. They use T3 Code's real layout and each theme's own colors, corner radii and fonts. To redraw them after you change a theme, run `python3 scripts/previews.py`.
@@ -94,7 +134,7 @@ Click the trash icon on the theme's card in **Settings → Themes**, or just swi
 
 ## Disclaimer
 
-These are fan-made, *inspired-by* themes. They aren't affiliated with or endorsed by Anysphere (Cursor), Microsoft (Teams, GitHub), Salesforce (Slack), Discord Inc., Notion Labs or Spotify. No logos, no trademarks, just colors and vibes.
+These are fan-made, *inspired-by* themes. They aren't affiliated with or endorsed by Anysphere (Cursor), Microsoft (Teams, GitHub), Salesforce (Slack), Discord Inc., Notion Labs, Spotify, X Corp., Linear Orbit, Vercel, Meta (WhatsApp) or Google (YouTube). No logos, no trademarks, just colors and vibes.
 
 ## License
 
